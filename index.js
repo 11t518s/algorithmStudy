@@ -10,7 +10,6 @@ const hand = 'right'
     let positionOfLeft = [0,3];
     let positionOfRight = [2,3];
     for (let i = 0; i < numbers.length; i ++) {
-        console.log(positionOfLeft)
         if (numbers[i] === 1 || numbers[i] === 4 ||numbers[i] === 7) {
             answer = answer + "L";
             positionOfLeft = [numbers[i]%3,parseInt(numbers[i] / 3)]
