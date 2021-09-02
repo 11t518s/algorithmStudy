@@ -6,3 +6,4 @@ def reculsive(x):
         return 1
     else:
         return reculsive(x-1) + reculsive(x-2)
+               
