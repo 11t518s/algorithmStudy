@@ -100,3 +100,24 @@ const result2 = arr2.reduce((acc, cur, idx) => {
   return (acc += cur);
 }, 10);
 console.log(result2); // 25
+
+function solution(priorities, location) {
+    const maxNumOfPriorities = priorities.reduce((acc, curr) => {
+        if ( acc < curr) {
+            acc = curr
+        }
+        return acc
+    }, 0)
+    
+    const indexOfMaxNumFromPriorities = priorities.indexOf(maxNumOfPriorities)
+    
+    const PrioritiesObject = priorities.map((priority, index) => {
+        return {priority, location: index}
+    })
+    
+    const orderedPrioritiesObject = [...PrioritiesObject.slice(indexOfMaxNumFromPriorities, priorities.length), ...PrioritiesObject.slice(0, indexOfMaxNumFromPriorities)]
+ 
+    const answer = orderedPrioritiesObject.findIndex(priorityObject => priorityObject.location === location) +1
+    
+    return answer
+}
